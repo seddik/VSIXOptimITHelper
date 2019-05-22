@@ -4,7 +4,7 @@ using System.Threading;
 using Microsoft.VisualStudio.Shell;
 using Task = System.Threading.Tasks.Task;
 
-namespace oChangeLog
+namespace OptimITHelper
 {
     /// <summary>
     /// This is the class that implements the package exposed by this assembly.
@@ -24,12 +24,12 @@ namespace oChangeLog
     /// </para>
     /// </remarks>
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
-    [Guid(oChangeLogPackage.PackageGuidString)]
+    [Guid(OptimITHelperPackage.PackageGuidString)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
-    public sealed class oChangeLogPackage : AsyncPackage
+    public sealed class OptimITHelperPackage : AsyncPackage
     {
         /// <summary>
-        /// oChangeLogPackage GUID string.
+        /// OptimITHelperPackage GUID string.
         /// </summary>
         public const string PackageGuidString = "28249ebd-a899-4990-9e51-0ef6f2885a9d";
 
@@ -47,7 +47,7 @@ namespace oChangeLog
             // When initialized asynchronously, the current thread may be a background thread at this point.
             // Do any initialization that requires the UI thread after switching to the UI thread.
             await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
-            await ChangeLog.InitializeAsync(this);
+            await OptimITHelper.InitializeAsync(this);
         }
 
         #endregion

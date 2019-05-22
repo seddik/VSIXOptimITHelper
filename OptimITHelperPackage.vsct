@@ -22,7 +22,7 @@
 
   <!--The Commands section is where commands, menus, and menu groups are defined.
       This section uses a Guid to identify the package that provides the command defined inside it. -->
-  <Commands package="oChangeLogPackage">
+  <Commands package="OptimITHelperPackage">
 
     <Groups>
       <Group guid="guidVSPackageCommandTopMenuCmdSet" id="MyGroupForCommands" />
@@ -37,16 +37,16 @@
     </Menus>
 
     <Buttons>
-      <Button guid="guidVSPackageCommandTopMenuCmdSet" id="ChangeLogId" type="Button">
+      <Button guid="guidVSPackageCommandTopMenuCmdSet" id="OptimITHelperId" type="Button">
         <Icon guid="guidImages" id="bmpPic1" />
         <Strings>
-          <ButtonText>Changelog</ButtonText>
+          <ButtonText>OptimITHelper</ButtonText>
         </Strings>
       </Button>
     </Buttons>
 
     <Bitmaps>
-      <Bitmap guid="guidImages" href="Resources\ChangeLog.png" usedList="bmpPic1, bmpPic2" />
+      <Bitmap guid="guidImages" href="Resources\OptimITHelper.png" usedList="bmpPic1, bmpPic2" />
     </Bitmaps>
   </Commands>
 
@@ -70,19 +70,19 @@
     <!-- Placement for commands.
            The parent of a command is always a group, never a menu, context menu or toolbar.
       -->
-    <CommandPlacement guid="guidVSPackageCommandTopMenuCmdSet" id="ChangeLogId" priority="0x0001" >
+    <CommandPlacement guid="guidVSPackageCommandTopMenuCmdSet" id="OptimITHelperId" priority="0x0001" >
       <Parent guid="guidVSPackageCommandTopMenuCmdSet" id="MyGroupForCommands"/>
     </CommandPlacement>
      
   </CommandPlacements>
 
   <Symbols>
-    <GuidSymbol name="oChangeLogPackage" value="{28249ebd-a899-4990-9e51-0ef6f2885a9d}" />
+    <GuidSymbol name="OptimITHelperPackage" value="{28249ebd-a899-4990-9e51-0ef6f2885a9d}" />
 
     <GuidSymbol name="guidVSPackageCommandTopMenuCmdSet" value="{48383281-1183-475c-8305-c2c0c3876bef}">
       <IDSymbol name="MyTopMenu" value="0x1020" />
       <IDSymbol name="MyGroupForCommands" value="0x1021" /> 
-      <IDSymbol name="ChangeLogId" value="0x0100" />
+      <IDSymbol name="OptimITHelperId" value="0x0100" />
     </GuidSymbol>
 
     <GuidSymbol name="guidImages" value="{ac9ea1de-1fa3-4080-99a8-bf1ce3f7bcb1}">

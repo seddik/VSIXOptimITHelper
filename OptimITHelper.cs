@@ -11,12 +11,12 @@ using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
 
-namespace oChangeLog
+namespace OptimITHelper
 {
     /// <summary>
     /// Command handler
     /// </summary>
-    internal sealed class ChangeLog
+    internal sealed class OptimITHelper
     {
         /// <summary>
         /// Command ID.
@@ -34,12 +34,12 @@ namespace oChangeLog
         private readonly AsyncPackage package;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ChangeLog"/> class.
+        /// Initializes a new instance of the <see cref="OptimITHelper"/> class.
         /// Adds our command handlers for menu (commands must exist in the command table file)
         /// </summary>
         /// <param name="package">Owner package, not null.</param>
         /// <param name="commandService">Command service to add command to, not null.</param>
-        private ChangeLog(AsyncPackage package, OleMenuCommandService commandService)
+        private OptimITHelper(AsyncPackage package, OleMenuCommandService commandService)
         {
             this.package = package ?? throw new ArgumentNullException(nameof(package));
             commandService = commandService ?? throw new ArgumentNullException(nameof(commandService));
@@ -52,7 +52,7 @@ namespace oChangeLog
         /// <summary>
         /// Gets the instance of the command.
         /// </summary>
-        public static ChangeLog Instance
+        public static OptimITHelper Instance
         {
             get;
             private set;
@@ -75,12 +75,12 @@ namespace oChangeLog
         /// <param name="package">Owner package, not null.</param>
         public static async Task InitializeAsync(AsyncPackage package)
         {
-            // Switch to the main thread - the call to AddCommand in ChangeLog's constructor requires
+            // Switch to the main thread - the call to AddCommand in OptimITHelper's constructor requires
             // the UI thread.
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync(package.DisposalToken);
 
             OleMenuCommandService commandService = await package.GetServiceAsync(typeof(IMenuCommandService)) as OleMenuCommandService;
-            Instance = new ChangeLog(package, commandService);
+            Instance = new OptimITHelper(package, commandService);
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace oChangeLog
                 MessageBox.Show("No solution loaded");
                 return;
             }
-            var path = Path.Combine(Path.GetDirectoryName(dte2.Solution.FullName), "changelog.txt");
+            var path = Path.Combine(Path.GetDirectoryName(dte2.Solution.FullName), "OptimITHelper.txt");
             Process.Start("notepad.exe", path);
         }
     }
