@@ -100,7 +100,7 @@ namespace OptimITHelper
                 MessageBox.Show("No solution loaded");
                 return;
             }
-            var path = Path.Combine(Path.GetDirectoryName(dte2.Solution.FullName), "OptimITHelper.txt");
+            var path = Path.Combine(Path.GetDirectoryName(dte2.Solution.FullName), "changelog.txt");
             Process.Start("notepad.exe", path);
         }
     }
