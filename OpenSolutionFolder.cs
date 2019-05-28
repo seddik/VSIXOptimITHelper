@@ -16,12 +16,12 @@ namespace OptimITHelper
     /// <summary>
     /// Command handler
     /// </summary>
-    internal sealed class OptimITHelper
+    internal sealed class OpenSolutionFolder
     {
         /// <summary>
         /// Command ID.
         /// </summary>
-        public const int CommandId = 0x0100;
+        public const int CommandId = 0x0101;
 
         /// <summary>
         /// Command menu group (command set GUID).
@@ -34,12 +34,12 @@ namespace OptimITHelper
         private readonly AsyncPackage package;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="OptimITHelper"/> class.
+        /// Initializes a new instance of the <see cref="OpenSolutionFolder"/> class.
         /// Adds our command handlers for menu (commands must exist in the command table file)
         /// </summary>
         /// <param name="package">Owner package, not null.</param>
         /// <param name="commandService">Command service to add command to, not null.</param>
-        private OptimITHelper(AsyncPackage package, OleMenuCommandService commandService)
+        private OpenSolutionFolder(AsyncPackage package, OleMenuCommandService commandService)
         {
             this.package = package ?? throw new ArgumentNullException(nameof(package));
             commandService = commandService ?? throw new ArgumentNullException(nameof(commandService));
@@ -52,7 +52,7 @@ namespace OptimITHelper
         /// <summary>
         /// Gets the instance of the command.
         /// </summary>
-        public static OptimITHelper Instance
+        public static OpenSolutionFolder Instance
         {
             get;
             private set;
@@ -80,7 +80,7 @@ namespace OptimITHelper
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync(package.DisposalToken);
 
             OleMenuCommandService commandService = await package.GetServiceAsync(typeof(IMenuCommandService)) as OleMenuCommandService;
-            Instance = new OptimITHelper(package, commandService);
+            Instance = new OpenSolutionFolder(package, commandService);
         }
 
         /// <summary>
@@ -100,8 +100,7 @@ namespace OptimITHelper
                 MessageBox.Show("No solution loaded");
                 return;
             }
-            var path = Path.Combine(Path.GetDirectoryName(dte2.Solution.FullName), "changelog.txt");
-            Process.Start("notepad.exe", path);
+            Process.Start("explorer.exe", Path.GetDirectoryName(dte2.Solution.FullName));
         }
     }
 }

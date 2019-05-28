@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="OptimITHelpers.64f94a89-be2f-4ff0-96ad-dd31023c6d2c" Version="1.0.1" Language="en-US" Publisher="OptimIT" />
+        <Identity Id="OptimITHelpers.64f94a89-be2f-4ff0-96ad-dd31023c6d2c" Version="1.0.2" Language="en-US" Publisher="OptimIT" />
         <DisplayName>OptimIT Helpers</DisplayName>
         <Description xml:space="preserve">Tools provided by OptimIT to boost productivity 
-- OptimITHelper helps you note every change you do in real time then saveit to OptimITHelper.txt in solution level</Description>
+- Changelog helps you note every change you do in real time then saveit to changelog.txt in solution level
+- Open solution folder : helps you open your current solution directory, without going the the context menu in solution explorer</Description>
         <MoreInfo>https://github.com/seddik/VSIXOptimITHelper</MoreInfo>
         <GettingStartedGuide>https://github.com/seddik/VSIXOptimITHelper</GettingStartedGuide>
         <ReleaseNotes>https://github.com/seddik/VSIXOptimITHelper</ReleaseNotes>

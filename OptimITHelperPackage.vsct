@@ -37,10 +37,16 @@
     </Menus>
 
     <Buttons>
-      <Button guid="guidVSPackageCommandTopMenuCmdSet" id="OptimITHelperId" type="Button">
+      <Button guid="guidVSPackageCommandTopMenuCmdSet" id="ChangeLogId" type="Button">
         <Icon guid="guidImages" id="bmpPic1" />
         <Strings>
-          <ButtonText>OptimITHelper</ButtonText>
+          <ButtonText>Changelog</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidVSPackageCommandTopMenuCmdSet" id="OpenSolutionFolderId" type="Button">
+        <Icon guid="guidImages" id="bmpPic2" />
+        <Strings>
+          <ButtonText>Open solution folder</ButtonText>
         </Strings>
       </Button>
     </Buttons>
@@ -70,10 +76,14 @@
     <!-- Placement for commands.
            The parent of a command is always a group, never a menu, context menu or toolbar.
       -->
-    <CommandPlacement guid="guidVSPackageCommandTopMenuCmdSet" id="OptimITHelperId" priority="0x0001" >
+    <CommandPlacement guid="guidVSPackageCommandTopMenuCmdSet" id="ChangeLogId" priority="0x0001" >
       <Parent guid="guidVSPackageCommandTopMenuCmdSet" id="MyGroupForCommands"/>
     </CommandPlacement>
-     
+    
+  <CommandPlacement guid="guidVSPackageCommandTopMenuCmdSet" id="OpenSolutionFolderId" priority="0x0002" >
+      <Parent guid="guidVSPackageCommandTopMenuCmdSet" id="MyGroupForCommands"/>
+    </CommandPlacement>
+
   </CommandPlacements>
 
   <Symbols>
@@ -81,8 +91,9 @@
 
     <GuidSymbol name="guidVSPackageCommandTopMenuCmdSet" value="{48383281-1183-475c-8305-c2c0c3876bef}">
       <IDSymbol name="MyTopMenu" value="0x1020" />
-      <IDSymbol name="MyGroupForCommands" value="0x1021" /> 
-      <IDSymbol name="OptimITHelperId" value="0x0100" />
+      <IDSymbol name="MyGroupForCommands" value="0x1021" />
+      <IDSymbol name="ChangeLogId" value="0x0100" />
+      <IDSymbol name="OpenSolutionFolderId" value="0x0101" />
     </GuidSymbol>
 
     <GuidSymbol name="guidImages" value="{ac9ea1de-1fa3-4080-99a8-bf1ce3f7bcb1}">
